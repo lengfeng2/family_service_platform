@@ -1,31 +1,27 @@
 package com.szb.config;
 
-import org.apache.catalina.filters.CorsFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+@EnableWebMvc
 public class CorsConfig {
 
-    private CorsConfiguration buildConfig(){
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        //配置跨域请求头，*配置所有请求
-        corsConfiguration.addAllowedHeader("*");
-        //所有地址都可以访问
-        corsConfiguration.addAllowedOrigin("*");
-        //配置跨域请求方法
-        corsConfiguration.addAllowedMethod("*");
-        return corsConfiguration;
-    }
-
     @Bean
-    public CorsFilter corsFilter(){
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        //配置 可以访问的地址
-        source.registerCorsConfiguration("/**",buildConfig());
-        return new CorsFilter();
+    public WebMvcConfigurer buildConfig(){
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedHeaders("*")//配置跨域请求头
+                        .allowedMethods("*")//配置跨域方法 可以是get post put delete
+                        .allowedOrigins("*")//配置跨域请求地址 *代表所有
+                        .maxAge(3600)
+                        .allowCredentials(true);//设置跨域请求的时候获取同一个 session
+            }
+        };
     }
-
 }

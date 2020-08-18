@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyFireAccident;
 import com.szb.mapper.WyFireAccidentMapper;
-import com.szb.service.IWyFireAccidentService;
+import com.szb.service.base.IWyFireAccidentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

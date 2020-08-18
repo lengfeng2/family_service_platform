@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblAttupload;
 import com.szb.mapper.TblAttuploadMapper;
-import com.szb.service.ITblAttuploadService;
+import com.szb.service.base.ITblAttuploadService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

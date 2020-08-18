@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblCommonLanguage;
 import com.szb.mapper.TblCommonLanguageMapper;
-import com.szb.service.ITblCommonLanguageService;
+import com.szb.service.base.ITblCommonLanguageService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

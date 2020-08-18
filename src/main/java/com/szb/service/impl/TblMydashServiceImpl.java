@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblMydash;
 import com.szb.mapper.TblMydashMapper;
-import com.szb.service.ITblMydashService;
+import com.szb.service.base.ITblMydashService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

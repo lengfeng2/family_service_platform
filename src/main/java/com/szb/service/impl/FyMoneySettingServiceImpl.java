@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FyMoneySetting;
 import com.szb.mapper.FyMoneySettingMapper;
-import com.szb.service.IFyMoneySettingService;
+import com.szb.service.base.IFyMoneySettingService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

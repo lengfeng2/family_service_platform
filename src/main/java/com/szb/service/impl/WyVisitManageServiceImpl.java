@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyVisitManage;
 import com.szb.mapper.WyVisitManageMapper;
-import com.szb.service.IWyVisitManageService;
+import com.szb.service.base.IWyVisitManageService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

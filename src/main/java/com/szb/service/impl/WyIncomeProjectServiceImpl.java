@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyIncomeProject;
 import com.szb.mapper.WyIncomeProjectMapper;
-import com.szb.service.IWyIncomeProjectService;
+import com.szb.service.base.IWyIncomeProjectService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

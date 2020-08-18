@@ -4,37 +4,69 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.szb.entity.TblUserRecord">
-        <id column="id" property="id" />
-        <result column="user_name" property="userName" />
-        <result column="user_password" property="userPassword" />
-        <result column="user_type" property="userType" />
-        <result column="user_role" property="userRole" />
-        <result column="user_gender" property="userGender" />
-        <result column="user_dept" property="userDept" />
-        <result column="user_job" property="userJob" />
-        <result column="user_status" property="userStatus" />
-        <result column="office_phone" property="officePhone" />
-        <result column="inner_phone" property="innerPhone" />
-        <result column="move_phone" property="movePhone" />
-        <result column="email" property="email" />
-        <result column="is_send_msg" property="isSendMsg" />
-        <result column="start_date" property="startDate" />
-        <result column="stop_date" property="stopDate" />
-        <result column="birthday" property="birthday" />
-        <result column="ip_rule" property="ipRule" />
-        <result column="user_hiredate" property="userHiredate" />
-        <result column="is_send_wchat" property="isSendWchat" />
-        <result column="remark" property="remark" />
-        <result column="company" property="company" />
-        <result column="is_dept_admin" property="isDeptAdmin" />
-        <result column="last_login_date" property="lastLoginDate" />
-        <result column="create_person" property="createPerson" />
-        <result column="create_date" property="createDate" />
+        <id column="tbr_id" property="id" />
+        <result column="tbr_user_name" property="userName" />
+        <result column="tbr_user_password" property="userPassword" />
+        <result column="tbr_user_type" property="userType" />
+        <result column="tbr_user_role" property="userRole" />
+        <result column="tbr_user_gender" property="userGender" />
+        <result column="tbr_user_dept" property="userDept" />
+        <result column="tbr_user_job" property="userJob" />
+        <result column="tbr_user_status" property="userStatus" />
+        <result column="tbr_office_phone" property="officePhone" />
+        <result column="tbr_inner_phone" property="innerPhone" />
+        <result column="tbr_move_phone" property="movePhone" />
+        <result column="tbr_email" property="email" />
+        <result column="tbr_is_send_msg" property="isSendMsg" />
+        <result column="tbr_start_date" property="startDate" />
+        <result column="tbr_stop_date" property="stopDate" />
+        <result column="tbr_birthday" property="birthday" />
+        <result column="tbr_ip_rule" property="ipRule" />
+        <result column="tbr_user_hiredate" property="userHiredate" />
+        <result column="tbr_is_send_wchat" property="isSendWchat" />
+        <result column="tbr_remark" property="remark" />
+        <result column="tbr_company" property="company" />
+        <result column="tbr_is_dept_admin" property="isDeptAdmin" />
+        <result column="tbr_last_login_date" property="lastLoginDate" />
+        <result column="tbr_create_person" property="createPerson" />
+        <result column="tbr_create_date" property="createDate" />
+    </resultMap>
+
+
+<!--    登录自定义Map-->
+    <resultMap id="loginMap" type="com.szb.entity.TblUserRecord" extends="BaseResultMap">
+        <association property="tblRole" javaType="com.szb.entity.TblRole">
+            <result property="rolePrivileges" column="role_privileges" />
+        </association>
+        <association property="tblDept" javaType="com.szb.entity.TblDept">
+            <result property="deptPrivileges" column="dept_privileges" />
+        </association>
+        <association property="tblCompany" javaType="com.szb.entity.TblCompany">
+            <result property="companyFullName" column="company_full_name" />
+        </association>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_name, user_password, user_type, user_role, user_gender, user_dept, user_job, user_status, office_phone, inner_phone, move_phone, email, is_send_msg, start_date, stop_date, birthday, ip_rule, user_hiredate, is_send_wchat, remark, company, is_dept_admin, last_login_date, create_person, create_date
+        tbr.id as tbr_id, tbr.user_name as tbr_user_name, tbr.user_password as tbr_user_password, tbr.user_type as tbr_user_type, tbr.user_role as tbr_user_role, tbr.user_gender as tbr_user_gender, tbr.user_dept as tbr_user_dept, tbr.user_job as tbr_user_job, tbr.user_status as tbr_user_status, tbr.office_phone as tbr_office_phone, tbr.inner_phone as tbr_inner_phone, tbr.move_phone as tbr_move_phone, tbr.email as tbr_email, tbr.is_send_msg as tbr_is_send_msg, tbr.start_date as tbr_start_date, tbr.stop_date as tbr_stop_date, tbr.birthday as tbr_birthday, tbr.ip_rule as tbr_ip_rule, tbr.user_hiredate as tbr_user_hiredate, tbr.is_send_wchat as tbr_is_send_wchat, tbr.remark as tbr_remark, tbr.company as tbr_company, tbr.is_dept_admin as tbr_is_dept_admin, tbr.last_login_date as tbr_last_login_date, tbr.create_person as tbr_create_person, tbr.create_date as tbr_create_date
     </sql>
+
+    <select id="login" resultMap="loginMap">
+        SELECT
+            <include refid="Base_Column_List" />,
+            tr.role_privileges,
+            td.dept_privileges,
+            tc.company_full_name
+        FROM
+            tbl_user_record tbr
+            LEFT JOIN tbl_role tr ON tbr.user_role = tr.id
+            LEFT JOIN tbl_dept td ON tbr.user_dept = td.id
+            LEFT JOIN tbl_company tc ON tbr.company = tc.id
+        WHERE
+            tbr.user_name = #{username}
+            AND tbr.user_password = #{password}
+    </select>
+
+
 
 </mapper>

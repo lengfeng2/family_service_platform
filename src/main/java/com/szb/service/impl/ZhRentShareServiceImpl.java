@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.ZhRentShare;
 import com.szb.mapper.ZhRentShareMapper;
-import com.szb.service.IZhRentShareService;
+import com.szb.service.base.IZhRentShareService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FyInvalidSub;
 import com.szb.mapper.FyInvalidSubMapper;
-import com.szb.service.IFyInvalidSubService;
+import com.szb.service.base.IFyInvalidSubService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

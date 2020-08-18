@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyAskMsgRemindLog;
 import com.szb.mapper.WyAskMsgRemindLogMapper;
-import com.szb.service.IWyAskMsgRemindLogService;
+import com.szb.service.base.IWyAskMsgRemindLogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

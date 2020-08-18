@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblQuick;
 import com.szb.mapper.TblQuickMapper;
-import com.szb.service.ITblQuickService;
+import com.szb.service.base.ITblQuickService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

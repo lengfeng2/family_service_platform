@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblDept;
 import com.szb.mapper.TblDeptMapper;
-import com.szb.service.ITblDeptService;
+import com.szb.service.base.ITblDeptService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

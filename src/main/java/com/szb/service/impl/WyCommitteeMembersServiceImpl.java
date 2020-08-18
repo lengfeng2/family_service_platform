@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyCommitteeMembers;
 import com.szb.mapper.WyCommitteeMembersMapper;
-import com.szb.service.IWyCommitteeMembersService;
+import com.szb.service.base.IWyCommitteeMembersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.ZhCustomerCheck;
 import com.szb.mapper.ZhCustomerCheckMapper;
-import com.szb.service.IZhCustomerCheckService;
+import com.szb.service.base.IZhCustomerCheckService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

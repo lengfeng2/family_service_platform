@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblRule;
 import com.szb.mapper.TblRuleMapper;
-import com.szb.service.ITblRuleService;
+import com.szb.service.base.ITblRuleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

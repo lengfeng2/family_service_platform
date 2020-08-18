@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblEnvirSetting;
 import com.szb.mapper.TblEnvirSettingMapper;
-import com.szb.service.ITblEnvirSettingService;
+import com.szb.service.base.ITblEnvirSettingService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

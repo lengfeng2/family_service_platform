@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblVod;
 import com.szb.mapper.TblVodMapper;
-import com.szb.service.ITblVodService;
+import com.szb.service.base.ITblVodService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

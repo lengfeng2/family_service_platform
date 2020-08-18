@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyGoodsInout;
 import com.szb.mapper.WyGoodsInoutMapper;
-import com.szb.service.IWyGoodsInoutService;
+import com.szb.service.base.IWyGoodsInoutService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

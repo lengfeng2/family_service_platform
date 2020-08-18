@@ -99,6 +99,36 @@ public class TblUserRecord implements Serializable {
     @ApiModelProperty(value = "创建时间")
     private LocalDateTime createDate;
 
+    //用户角色
+    private TblRole tblRole;
+    //用户部门
+    private TblDept tblDept;
+    //用户公司
+    private TblCompany tblCompany;
+
+    public TblRole getTblRole() {
+        return tblRole;
+    }
+
+    public void setTblRole(TblRole tblRole) {
+        this.tblRole = tblRole;
+    }
+
+    public TblDept getTblDept() {
+        return tblDept;
+    }
+
+    public void setTblDept(TblDept tblDept) {
+        this.tblDept = tblDept;
+    }
+
+    public TblCompany getTblCompany() {
+        return tblCompany;
+    }
+
+    public void setTblCompany(TblCompany tblCompany) {
+        this.tblCompany = tblCompany;
+    }
 
     public Integer getId() {
         return id;
@@ -311,32 +341,35 @@ public class TblUserRecord implements Serializable {
     @Override
     public String toString() {
         return "TblUserRecord{" +
-        "id=" + id +
-        ", userName=" + userName +
-        ", userPassword=" + userPassword +
-        ", userType=" + userType +
-        ", userRole=" + userRole +
-        ", userGender=" + userGender +
-        ", userDept=" + userDept +
-        ", userJob=" + userJob +
-        ", userStatus=" + userStatus +
-        ", officePhone=" + officePhone +
-        ", innerPhone=" + innerPhone +
-        ", movePhone=" + movePhone +
-        ", email=" + email +
-        ", isSendMsg=" + isSendMsg +
-        ", startDate=" + startDate +
-        ", stopDate=" + stopDate +
-        ", birthday=" + birthday +
-        ", ipRule=" + ipRule +
-        ", userHiredate=" + userHiredate +
-        ", isSendWchat=" + isSendWchat +
-        ", remark=" + remark +
-        ", company=" + company +
-        ", isDeptAdmin=" + isDeptAdmin +
-        ", lastLoginDate=" + lastLoginDate +
-        ", createPerson=" + createPerson +
-        ", createDate=" + createDate +
-        "}";
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userType='" + userType + '\'' +
+                ", userRole=" + userRole +
+                ", userGender='" + userGender + '\'' +
+                ", userDept=" + userDept +
+                ", userJob=" + userJob +
+                ", userStatus='" + userStatus + '\'' +
+                ", officePhone='" + officePhone + '\'' +
+                ", innerPhone='" + innerPhone + '\'' +
+                ", movePhone='" + movePhone + '\'' +
+                ", email='" + email + '\'' +
+                ", isSendMsg='" + isSendMsg + '\'' +
+                ", startDate=" + startDate +
+                ", stopDate=" + stopDate +
+                ", birthday=" + birthday +
+                ", ipRule='" + ipRule + '\'' +
+                ", userHiredate=" + userHiredate +
+                ", isSendWchat='" + isSendWchat + '\'' +
+                ", remark='" + remark + '\'' +
+                ", company='" + company + '\'' +
+                ", isDeptAdmin='" + isDeptAdmin + '\'' +
+                ", lastLoginDate=" + lastLoginDate +
+                ", createPerson='" + createPerson + '\'' +
+                ", createDate=" + createDate +
+                ", tblRole=" + tblRole +
+                ", tblDept=" + tblDept +
+                ", tblCompany=" + tblCompany +
+                '}';
     }
 }

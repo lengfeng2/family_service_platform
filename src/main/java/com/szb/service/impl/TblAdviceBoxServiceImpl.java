@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblAdviceBox;
 import com.szb.mapper.TblAdviceBoxMapper;
-import com.szb.service.ITblAdviceBoxService;
+import com.szb.service.base.ITblAdviceBoxService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

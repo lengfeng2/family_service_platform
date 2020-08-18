@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblDbrecovery;
 import com.szb.mapper.TblDbrecoveryMapper;
-import com.szb.service.ITblDbrecoveryService;
+import com.szb.service.base.ITblDbrecoveryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

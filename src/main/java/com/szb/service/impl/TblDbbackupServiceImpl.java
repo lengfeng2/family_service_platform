@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblDbbackup;
 import com.szb.mapper.TblDbbackupMapper;
-import com.szb.service.ITblDbbackupService;
+import com.szb.service.base.ITblDbbackupService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

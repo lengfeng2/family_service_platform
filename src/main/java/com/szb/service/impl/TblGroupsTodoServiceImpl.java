@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblGroupsTodo;
 import com.szb.mapper.TblGroupsTodoMapper;
-import com.szb.service.ITblGroupsTodoService;
+import com.szb.service.base.ITblGroupsTodoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

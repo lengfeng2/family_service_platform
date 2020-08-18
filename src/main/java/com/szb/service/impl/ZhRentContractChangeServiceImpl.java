@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.ZhRentContractChange;
 import com.szb.mapper.ZhRentContractChangeMapper;
-import com.szb.service.IZhRentContractChangeService;
+import com.szb.service.base.IZhRentContractChangeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

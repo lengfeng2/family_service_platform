@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FyShareUserDetail;
 import com.szb.mapper.FyShareUserDetailMapper;
-import com.szb.service.IFyShareUserDetailService;
+import com.szb.service.base.IFyShareUserDetailService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

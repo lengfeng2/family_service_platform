@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyServiceCashierGroup;
 import com.szb.mapper.WyServiceCashierGroupMapper;
-import com.szb.service.IWyServiceCashierGroupService;
+import com.szb.service.base.IWyServiceCashierGroupService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

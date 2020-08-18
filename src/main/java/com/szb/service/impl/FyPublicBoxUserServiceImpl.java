@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FyPublicBoxUser;
 import com.szb.mapper.FyPublicBoxUserMapper;
-import com.szb.service.IFyPublicBoxUserService;
+import com.szb.service.base.IFyPublicBoxUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

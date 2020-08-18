@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblVoteData;
 import com.szb.mapper.TblVoteDataMapper;
-import com.szb.service.ITblVoteDataService;
+import com.szb.service.base.ITblVoteDataService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FcEstate;
 import com.szb.mapper.FcEstateMapper;
-import com.szb.service.IFcEstateService;
+import com.szb.service.base.IFcEstateService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

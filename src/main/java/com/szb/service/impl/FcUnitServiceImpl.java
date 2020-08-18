@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FcUnit;
 import com.szb.mapper.FcUnitMapper;
-import com.szb.service.IFcUnitService;
+import com.szb.service.base.IFcUnitService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

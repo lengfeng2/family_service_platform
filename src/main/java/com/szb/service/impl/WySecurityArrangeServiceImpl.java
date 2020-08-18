@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WySecurityArrange;
 import com.szb.mapper.WySecurityArrangeMapper;
-import com.szb.service.IWySecurityArrangeService;
+import com.szb.service.base.IWySecurityArrangeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

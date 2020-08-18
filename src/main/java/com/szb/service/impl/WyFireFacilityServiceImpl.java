@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.WyFireFacility;
 import com.szb.mapper.WyFireFacilityMapper;
-import com.szb.service.IWyFireFacilityService;
+import com.szb.service.base.IWyFireFacilityService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

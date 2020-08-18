@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FyShareStandingBook;
 import com.szb.mapper.FyShareStandingBookMapper;
-import com.szb.service.IFyShareStandingBookService;
+import com.szb.service.base.IFyShareStandingBookService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

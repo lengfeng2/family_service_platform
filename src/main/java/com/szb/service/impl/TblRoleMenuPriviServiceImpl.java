@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.TblRoleMenuPrivi;
 import com.szb.mapper.TblRoleMenuPriviMapper;
-import com.szb.service.ITblRoleMenuPriviService;
+import com.szb.service.base.ITblRoleMenuPriviService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

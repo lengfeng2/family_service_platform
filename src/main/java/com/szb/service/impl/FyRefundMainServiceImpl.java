@@ -2,7 +2,7 @@ package com.szb.service.impl;
 
 import com.szb.entity.FyRefundMain;
 import com.szb.mapper.FyRefundMainMapper;
-import com.szb.service.IFyRefundMainService;
+import com.szb.service.base.IFyRefundMainService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
