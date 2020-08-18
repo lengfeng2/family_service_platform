@@ -1,0 +1,150 @@
+package com.szb.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+/**
+ * <p>
+ * 保安安排
+ * </p>
+ *
+ * @author leng
+ * @since 2020-08-14
+ */
+@ApiModel(value="WySecurityArrange对象", description="保安安排")
+public class WySecurityArrange implements Serializable {
+
+    private static final long serialVersionUID=1L;
+
+    @ApiModelProperty(value = "编号")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    @ApiModelProperty(value = "开始日期")
+    private LocalDateTime startDate;
+
+    @ApiModelProperty(value = "结束日期")
+    private LocalDateTime stopDate;
+
+    @ApiModelProperty(value = "班次")
+    private String classes;
+
+    @ApiModelProperty(value = "时段")
+    private String timeFrame;
+
+    @ApiModelProperty(value = "地段")
+    private String district;
+
+    @ApiModelProperty(value = "值班人员")
+    private String waterkeeper;
+
+    @ApiModelProperty(value = "岗位")
+    private String job;
+
+    @ApiModelProperty(value = "备注")
+    private String remark;
+
+    @ApiModelProperty(value = "所属公司")
+    private String company;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDateTime getStopDate() {
+        return stopDate;
+    }
+
+    public void setStopDate(LocalDateTime stopDate) {
+        this.stopDate = stopDate;
+    }
+
+    public String getClasses() {
+        return classes;
+    }
+
+    public void setClasses(String classes) {
+        this.classes = classes;
+    }
+
+    public String getTimeFrame() {
+        return timeFrame;
+    }
+
+    public void setTimeFrame(String timeFrame) {
+        this.timeFrame = timeFrame;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getWaterkeeper() {
+        return waterkeeper;
+    }
+
+    public void setWaterkeeper(String waterkeeper) {
+        this.waterkeeper = waterkeeper;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return "WySecurityArrange{" +
+        "id=" + id +
+        ", startDate=" + startDate +
+        ", stopDate=" + stopDate +
+        ", classes=" + classes +
+        ", timeFrame=" + timeFrame +
+        ", district=" + district +
+        ", waterkeeper=" + waterkeeper +
+        ", job=" + job +
+        ", remark=" + remark +
+        ", company=" + company +
+        "}";
+    }
+}

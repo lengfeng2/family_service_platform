@@ -1,0 +1,114 @@
+package com.szb.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+/**
+ * <p>
+ * 投票项目表
+ * </p>
+ *
+ * @author leng
+ * @since 2020-08-14
+ */
+@ApiModel(value="TblVoteProject1对象", description="投票项目表")
+public class TblVoteProject1 implements Serializable {
+
+    private static final long serialVersionUID=1L;
+
+    @ApiModelProperty(value = "项目编号")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    @ApiModelProperty(value = "项目名称")
+    private String projectName;
+
+    @ApiModelProperty(value = "项目类型")
+    private String projectType;
+
+    @ApiModelProperty(value = "项目标志")
+    private String projectTag;
+
+    @ApiModelProperty(value = "项目说明")
+    private String projectDesc;
+
+    @ApiModelProperty(value = "建档人")
+    private String inputRecordPerson;
+
+    @ApiModelProperty(value = "建档时间")
+    private LocalDateTime inputRecordDate;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getProjectType() {
+        return projectType;
+    }
+
+    public void setProjectType(String projectType) {
+        this.projectType = projectType;
+    }
+
+    public String getProjectTag() {
+        return projectTag;
+    }
+
+    public void setProjectTag(String projectTag) {
+        this.projectTag = projectTag;
+    }
+
+    public String getProjectDesc() {
+        return projectDesc;
+    }
+
+    public void setProjectDesc(String projectDesc) {
+        this.projectDesc = projectDesc;
+    }
+
+    public String getInputRecordPerson() {
+        return inputRecordPerson;
+    }
+
+    public void setInputRecordPerson(String inputRecordPerson) {
+        this.inputRecordPerson = inputRecordPerson;
+    }
+
+    public LocalDateTime getInputRecordDate() {
+        return inputRecordDate;
+    }
+
+    public void setInputRecordDate(LocalDateTime inputRecordDate) {
+        this.inputRecordDate = inputRecordDate;
+    }
+
+    @Override
+    public String toString() {
+        return "TblVoteProject1{" +
+        "id=" + id +
+        ", projectName=" + projectName +
+        ", projectType=" + projectType +
+        ", projectTag=" + projectTag +
+        ", projectDesc=" + projectDesc +
+        ", inputRecordPerson=" + inputRecordPerson +
+        ", inputRecordDate=" + inputRecordDate +
+        "}";
+    }
+}
