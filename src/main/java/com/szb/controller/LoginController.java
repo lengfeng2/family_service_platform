@@ -1,24 +1,28 @@
 package com.szb.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.szb.entity.TblUserRecord;
+import com.szb.result.Permission;
+import com.szb.result.Permissions;
+import com.szb.result.UserInfo;
+import com.szb.result.WebResponse;
 import com.szb.service.ILoginService;
 import com.szb.service.impl.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.Map;
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class LoginController {
 
     @Resource
-    private LoginServiceImpl loginService;
-
+    private LoginServiceImpl loginService ;
 
     /**
      * 登录验证
@@ -26,17 +30,43 @@ public class LoginController {
      * @return
      */
     @RequestMapping("/auth/login")
-    public TblUserRecord login(@RequestParam("username") String username, @RequestParam("password") String password) {
+    public String login(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session) {
         System.out.println(username + "---" + password);
         TblUserRecord tblUserRecord = loginService.login(username, password);
-        System.out.println(tblUserRecord);
-        return tblUserRecord;
+        tblUserRecord.setToken(tblUserRecord.getUserName());
+        session.setAttribute("userRecord",tblUserRecord);
+        //设置前端返回对象
+        WebResponse webResponse = new WebResponse("200","",tblUserRecord);
+        //从下面sessionID看见session不是同一个，后端跨域设置了同一session,现在需要前端设置同一session
+        System.out.println(session.getId());
+        //设置返回格式JSON
+        return JSONObject.toJSONString(webResponse);
     }
 
     @RequestMapping("/auth/2step-code")
     public boolean defaultValidate() {
         System.out.println("ant-design自带的前端验证，写不写无所谓");
         return true;
+    }
+
+    /**
+     * 登录后会发送user/info请求，跳转页面
+     * @param session
+     * @return
+     */
+    @RequestMapping("/user/info")
+    public String getInfo(HttpSession session){
+        //封装返回的页面数据集格式
+        TblUserRecord tblUserRecord = (TblUserRecord) session.getAttribute("userRecord");
+        String[] split = tblUserRecord.getTblRole().getRolePrivileges().split("-");
+        Permissions permissions = new Permissions();
+        List<Permission> permissionList = new ArrayList<>();
+        for (String s : split) {
+            permissionList.add(new Permission(s));
+        }
+        permissions.setPermissionList(permissionList);
+        UserInfo userInfo = new UserInfo(tblUserRecord.getUserName(), permissions);
+        return JSONObject.toJSONString(new WebResponse("200","",userInfo));
     }
 
 

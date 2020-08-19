@@ -106,6 +106,17 @@ public class TblUserRecord implements Serializable {
     //用户公司
     private TblCompany tblCompany;
 
+    //定义TOKEN字段
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     public TblRole getTblRole() {
         return tblRole;
     }
