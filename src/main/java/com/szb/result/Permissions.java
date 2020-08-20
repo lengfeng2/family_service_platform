@@ -3,20 +3,23 @@ package com.szb.result;
 import java.util.List;
 
 public class Permissions {
-    private List<Permission> permissionList;
 
-    public List<Permission> getPermissionList() {
-        return permissionList;
+    private List<Permission> permissions;
+
+    public List<Permission> getPermissions() {
+        return permissions;
     }
 
-    public void setPermissionList(List<Permission> permissionList) {
-        this.permissionList = permissionList;
+    public void setPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
     }
+
+
 
     @Override
     public String toString() {
         return "Permissions{" +
-                "permissionList=" + permissionList +
+                "permissions=" + permissions +
                 '}';
     }
 }

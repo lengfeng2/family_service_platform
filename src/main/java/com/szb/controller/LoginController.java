@@ -4,11 +4,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.szb.entity.TblUserRecord;
 import com.szb.result.Permission;
 import com.szb.result.Permissions;
+import com.szb.result.ReturnObject;
 import com.szb.result.UserInfo;
-import com.szb.result.WebResponse;
-import com.szb.service.ILoginService;
 import com.szb.service.impl.LoginServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,11 +34,11 @@ public class LoginController {
         tblUserRecord.setToken(tblUserRecord.getUserName());
         session.setAttribute("userRecord",tblUserRecord);
         //设置前端返回对象
-        WebResponse webResponse = new WebResponse("200","",tblUserRecord);
+        ReturnObject returnObject = new ReturnObject(tblUserRecord);
         //从下面sessionID看见session不是同一个，后端跨域设置了同一session,现在需要前端设置同一session
         System.out.println(session.getId());
         //设置返回格式JSON
-        return JSONObject.toJSONString(webResponse);
+        return JSONObject.toJSONString(returnObject);
     }
 
     @RequestMapping("/auth/2step-code")
@@ -56,19 +54,28 @@ public class LoginController {
      */
     @RequestMapping("/user/info")
     public String getInfo(HttpSession session){
-        //封装返回的页面数据集格式
+        //获取sessiond对象
         TblUserRecord tblUserRecord = (TblUserRecord) session.getAttribute("userRecord");
         String[] split = tblUserRecord.getTblRole().getRolePrivileges().split("-");
-        Permissions permissions = new Permissions();
+        //拼接返回前台对象
         List<Permission> permissionList = new ArrayList<>();
+        Permissions permissions = new Permissions();
+        //设置权限对象
         for (String s : split) {
             permissionList.add(new Permission(s));
         }
-        permissions.setPermissionList(permissionList);
+        permissions.setPermissions(permissionList);
+        //设置返回UserInfo对象
         UserInfo userInfo = new UserInfo(tblUserRecord.getUserName(), permissions);
-        return JSONObject.toJSONString(new WebResponse("200","",userInfo));
+        return JSONObject.toJSONString(new ReturnObject(userInfo));
     }
 
+    @RequestMapping("/auth/logout")
+    public String logOut(HttpSession session){
+        System.out.println("logOut");
+        session.invalidate();
+        return "";
+    }
 
 }
 
