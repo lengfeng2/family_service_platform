@@ -2,10 +2,16 @@ package com.szb.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Size;
 
 /**
  * <p>
@@ -15,16 +21,17 @@ import io.swagger.annotations.ApiModelProperty;
  * @author leng
  * @since 2020-08-14
  */
-@ApiModel(value="FcBuilding对象", description="楼宇信息表")
+@ApiModel(value = "FcBuilding对象", description = "楼宇信息表")
 public class FcBuilding implements Serializable {
 
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "自动编号")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     @ApiModelProperty(value = "房产编码")
+    @Length(min = 1, max = 3, message = "房产编码长度超过限制")
     private String estateCode;
 
     @ApiModelProperty(value = "楼宇编码")
@@ -49,10 +56,10 @@ public class FcBuilding implements Serializable {
     private String salePermissionId;
 
     @ApiModelProperty(value = "竣工日期")
-    private LocalDateTime finishDate;
+    private Date finishDate;
 
     @ApiModelProperty(value = "封顶日期")
-    private LocalDateTime overRoofDate;
+    private Date overRoofDate;
 
     @ApiModelProperty(value = "装修")
     private String decorate;
@@ -202,19 +209,19 @@ public class FcBuilding implements Serializable {
         this.salePermissionId = salePermissionId;
     }
 
-    public LocalDateTime getFinishDate() {
+    public Date getFinishDate() {
         return finishDate;
     }
 
-    public void setFinishDate(LocalDateTime finishDate) {
+    public void setFinishDate(Date finishDate) {
         this.finishDate = finishDate;
     }
 
-    public LocalDateTime getOverRoofDate() {
+    public Date getOverRoofDate() {
         return overRoofDate;
     }
 
-    public void setOverRoofDate(LocalDateTime overRoofDate) {
+    public void setOverRoofDate(Date overRoofDate) {
         this.overRoofDate = overRoofDate;
     }
 
@@ -421,42 +428,42 @@ public class FcBuilding implements Serializable {
     @Override
     public String toString() {
         return "FcBuilding{" +
-        "id=" + id +
-        ", estateCode=" + estateCode +
-        ", buildingCode=" + buildingCode +
-        ", buildingName=" + buildingName +
-        ", buildingFunction=" + buildingFunction +
-        ", usedArea=" + usedArea +
-        ", buildArea=" + buildArea +
-        ", buildPermissionId=" + buildPermissionId +
-        ", salePermissionId=" + salePermissionId +
-        ", finishDate=" + finishDate +
-        ", overRoofDate=" + overRoofDate +
-        ", decorate=" + decorate +
-        ", structType=" + structType +
-        ", damageGrade=" + damageGrade +
-        ", unitCount=" + unitCount +
-        ", buildingType=" + buildingType +
-        ", cleanFloor=" + cleanFloor +
-        ", mopFloor=" + mopFloor +
-        ", channelArea=" + channelArea +
-        ", elevator=" + elevator +
-        ", channelDoor=" + channelDoor +
-        ", evevatorDoor=" + evevatorDoor +
-        ", waterWellDoor=" + waterWellDoor +
-        ", electricWellDoor=" + electricWellDoor +
-        ", windowShades=" + windowShades +
-        ", hydrant=" + hydrant +
-        ", mirrors=" + mirrors +
-        ", unitDoor=" + unitDoor +
-        ", hardenGroundArea=" + hardenGroundArea +
-        ", greenArea=" + greenArea +
-        ", noGreenArea=" + noGreenArea +
-        ", waterByPerson=" + waterByPerson +
-        ", isElevator=" + isElevator +
-        ", isSecondWaterElectric=" + isSecondWaterElectric +
-        ", randomIdentify=" + randomIdentify +
-        ", remark=" + remark +
-        "}";
+                "id=" + id +
+                ", estateCode=" + estateCode +
+                ", buildingCode=" + buildingCode +
+                ", buildingName=" + buildingName +
+                ", buildingFunction=" + buildingFunction +
+                ", usedArea=" + usedArea +
+                ", buildArea=" + buildArea +
+                ", buildPermissionId=" + buildPermissionId +
+                ", salePermissionId=" + salePermissionId +
+                ", finishDate=" + finishDate +
+                ", overRoofDate=" + overRoofDate +
+                ", decorate=" + decorate +
+                ", structType=" + structType +
+                ", damageGrade=" + damageGrade +
+                ", unitCount=" + unitCount +
+                ", buildingType=" + buildingType +
+                ", cleanFloor=" + cleanFloor +
+                ", mopFloor=" + mopFloor +
+                ", channelArea=" + channelArea +
+                ", elevator=" + elevator +
+                ", channelDoor=" + channelDoor +
+                ", evevatorDoor=" + evevatorDoor +
+                ", waterWellDoor=" + waterWellDoor +
+                ", electricWellDoor=" + electricWellDoor +
+                ", windowShades=" + windowShades +
+                ", hydrant=" + hydrant +
+                ", mirrors=" + mirrors +
+                ", unitDoor=" + unitDoor +
+                ", hardenGroundArea=" + hardenGroundArea +
+                ", greenArea=" + greenArea +
+                ", noGreenArea=" + noGreenArea +
+                ", waterByPerson=" + waterByPerson +
+                ", isElevator=" + isElevator +
+                ", isSecondWaterElectric=" + isSecondWaterElectric +
+                ", randomIdentify=" + randomIdentify +
+                ", remark=" + remark +
+                "}";
     }
 }
